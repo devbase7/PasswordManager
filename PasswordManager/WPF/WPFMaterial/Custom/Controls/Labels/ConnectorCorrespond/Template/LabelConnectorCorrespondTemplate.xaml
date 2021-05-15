@@ -1,0 +1,67 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:labelConnectorCorrespond="clr-namespace:WPFMaterial.Custom.Controls.Labels.ConnectorCorrespond.Code">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Labels/ConnectorCorrespond/Resources/Colors.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Common/Resources/Templates.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<Style
+		TargetType="labelConnectorCorrespond:LabelConnectorCorrespondCode">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="labelConnectorCorrespond:LabelConnectorCorrespondCode">
+					<Border
+						CornerRadius="3,0,0,3"
+						BorderBrush="{StaticResource SolidColorBrush-ConnectionBorder}"
+						BorderThickness="1,1,0,1">
+						<Grid
+							Width="16"
+							Height="{Binding Width, RelativeSource={RelativeSource Self}}"
+							HorizontalAlignment="Left"
+							Cursor="Help"
+							Margin="-8,0,0,0">
+							<Grid.ToolTip>
+								<ToolTip
+									Content="{TemplateBinding StatusHint}"
+									Style="{StaticResource ToolTip-ToolTipStandard-Template}"/>
+							</Grid.ToolTip>
+
+							<Ellipse
+								Fill="{StaticResource SolidColorBrush-UnderIconBackground}"
+								Stretch="Uniform">
+								<Ellipse.Style>
+									<Style
+										TargetType="Ellipse">
+										<Style.Triggers>
+											<DataTrigger
+												Binding="{Binding Data, ElementName=icon}"
+												Value="{x:Null}">
+												<Setter
+													Property="Visibility"
+													Value="Collapsed"/>
+											</DataTrigger>
+										</Style.Triggers>
+									</Style>
+								</Ellipse.Style>
+							</Ellipse>
+
+							<Path
+								Name="icon"
+								Stretch="Uniform"
+								Fill="{TemplateBinding IconFill}"
+								Data="{TemplateBinding Icon}"/>
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

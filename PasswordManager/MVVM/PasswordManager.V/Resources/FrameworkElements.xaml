@@ -1,0 +1,229 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Common/Resources/Styles.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<!--#region TextBlocks-->
+	<TextBlock
+		x:Key="FrameworkElement-RegistrationPasswordCorrespondStatusHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheLeftSide-Style}">
+		<Run
+			Text="Password"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		and
+		<Run
+			Text="Confirm password"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		correspond
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-RegistrationPasswordNotCorrespondStatusHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheLeftSide-Style}">
+		<Run
+			Text="Password"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		and
+		<Run
+			Text="Confirm password"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		do not correspond!
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-ChangeCurrentLoginPasswordLoginCorrespondStatusHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheLeftSide-Style}">
+		<Run
+			Text="New login"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		and
+		<Run
+			Text="Confirm new login"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		correspond
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-ChangeCurrentLoginPasswordLoginNotCorrespondStatusHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheLeftSide-Style}">
+		<Run
+			Text="New login"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		and
+		<Run
+			Text="Confirm new login"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		do not correspond!
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-ChangeCurrentLoginPasswordPasswordCorrespondStatusHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheLeftSide-Style}">
+		<Run
+			Text="New password"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		and
+		<Run
+			Text="Confirm new password"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		correspond
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-ChangeCurrentLoginPasswordPasswordNotCorrespondStatusHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheLeftSide-Style}">
+		<Run
+			Text="New password"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		and
+		<Run
+			Text="Confirm new password"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		do not correspond!
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-ClickToAddThisRecordToFavorites-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		Click to
+		<Run
+			Text="add this record"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		to
+		<Run
+			Text="&quot;Favorites&quot;"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-ClickToRemoveThisRecordFromFavorites-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		Click to
+		<Run
+			Text="remove this record"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		from
+		<Run
+			Text="&quot;Favorites&quot;"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-ClickToSelectThisCategory-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		Click to
+		<Run
+			Text="select this category"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-ClickToSelectThisRecord-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		Click to
+		<Run
+			Text="select this record"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-TopRepeatButtonHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		To the
+		<Run
+			Text="top"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-AboveRepeatButtonHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		Scroll
+		<Run
+			Text="above"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-BelowRepeatButtonHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		Scroll
+		<Run
+			Text="below"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-EndRepeatButtonHint-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		To the
+		<Run
+			Text="end"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-qwe-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		Scrolling pages
+		<Run
+			Text="above to cursor position"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-qwerty-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style}">
+		Scrolling pages
+		<Run
+			Text="below to cursor position"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-recordDel-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfMarkedTextIsOnBothSides-Style}">
+		<Run
+			Text="Delete"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		this
+		<Run
+			Text="record"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+
+
+	<TextBlock
+		x:Key="FrameworkElement-recordDelete-TextBlock"
+		Style="{StaticResource FrameworkElement-HorizontalVisualPositionAdjustmentIfMarkedTextIsOnBothSides-Style}">
+		Quick
+		<Run
+			Text="delete"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+		this
+		<Run
+			Text="record (Enter/Space)"
+			Style="{StaticResource Run-MarkedText-Style}"/>
+	</TextBlock>
+	<!--#endregion-->
+</ResourceDictionary>

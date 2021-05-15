@@ -1,0 +1,120 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--#region Colors-->
+	<Color
+		x:Key="Color-ScrollPageUpDownRepeatButtonMouseOverStateAlpha">
+		#0A0000FF
+	</Color>
+
+
+	<Color
+		x:Key="Color-ScrollPageUpDownRepeatButtonPressedStateAlpha">
+		#140000FF
+	</Color>
+
+
+	<Color
+		x:Key="Color-QuickScrollRepeatButtonIconPressedState">
+		#3C77DD
+	</Color>
+
+
+	<Color
+		x:Key="Color-CtrlSimpleBorBrMOStateCustColor">
+		#5593FF
+	</Color>
+
+
+	<Color
+		x:Key="Color-QuickScrollRepeatButtonIconMouseOverState">
+		#5593FF
+	</Color>
+
+
+	<Color
+		x:Key="Color-PthBtnIconNStateCustColor">
+		#999999
+	</Color>
+
+
+	<Color
+		x:Key="Color-QuickScrollRepeatButtonIconNormalState">
+		#999999
+	</Color>
+	<!--#endregion-->
+
+
+	<!--#region SolidColorBrushes-->
+	<SolidColorBrush
+		x:Key="SolidColorBrush-PthBtnIconNStateCustSColBr"
+		Color="{StaticResource Color-PthBtnIconNStateCustColor}"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-QuickScrollRepeatButtonIconDefault"
+		Color="{StaticResource Color-QuickScrollRepeatButtonIconNormalState}"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-CtrlSimpleBorBrMOStateCustSColBr"
+		Color="{StaticResource Color-CtrlSimpleBorBrMOStateCustColor}"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BtnToolIconNStateCustSColBr"
+		Color="#D6D6D6"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BtnBorBrIsDefAndFStateCustSColBr"
+		Color="#DE8A3F"/>
+	<!--#endregion-->
+
+
+	<!--#region LinearGradientBrushes-->
+	<LinearGradientBrush
+		x:Key="LinearGradientBrush-ScBBgLGrBr"
+		StartPoint="0,0"
+		EndPoint="0.5,0"
+		SpreadMethod="Reflect">
+		<GradientStop
+			Offset="0.2"
+			Color="#D6D6D6"/>
+
+		<GradientStop
+			Offset="0.8"
+			Color="#F4F4F4"/>
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush
+		x:Key="LinearGradientBrush-QuickScrollRepeatButton"
+		StartPoint="0,0"
+		EndPoint="0.5,0"
+		SpreadMethod="Reflect">
+		<GradientStop
+			Offset="0.2"
+			Color="#C4C4C4"/>
+
+		<GradientStop
+			Offset="0.6"
+			Color="#EFEFEF"/>
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush
+		x:Key="LinearGradientBrush-Scroll"
+		StartPoint="0,0"
+		EndPoint="0.5,0"
+		SpreadMethod="Reflect">
+		<GradientStop
+			Offset="0"
+			Color="#5B5B5B"/>
+
+		<GradientStop
+			Offset="0.6"
+			Color="#A4A4A4"/>
+	</LinearGradientBrush>
+	<!--#endregion-->
+</ResourceDictionary>

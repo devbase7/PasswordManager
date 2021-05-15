@@ -1,0 +1,39 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--#region SolidColorBrushes-->
+	<SolidColorBrush
+		x:Key="SolidColorBrush-Icon"
+		Color="#C3C3C3"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-IconDisabled"
+		Color="Gainsboro"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-TextBoxUnderline"
+		Color="#00F702"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-Caret"
+		Color="Brown"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-HintIfTextIsEmptyBackground"
+		Color="#EFEFEF"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-HintIfTextIsEmptyForeground"
+		Color="Red"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-ButtonClearBackground"
+		Color="#D6D6D6"/>
+	<!--#endregion-->
+</ResourceDictionary>

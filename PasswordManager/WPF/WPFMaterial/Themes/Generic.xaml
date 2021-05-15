@@ -1,0 +1,64 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ResourceDictionary.MergedDictionaries>
+		<!--#region Buttons-->
+			<!--ChromeNavigation-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Buttons/ChromeNavigation/Template/ButtonChromeNavigationTemplate.xaml"/>
+
+			<!--ChromeWindowManagement-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Buttons/ChromeWindowManagement/Template/ButtonChromeWindowManagementTemplate.xaml"/>
+
+			<!--TwoColorRaidalGradient-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Buttons/TwoColorRadialGradient/Template/ButtonTwoColorRadialGradientTemplate.xaml"/>
+
+			<!--TwoColorRadialGradientTransformer-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Buttons/TwoColorRadialGradientTransformer/Template/ButtonTwoColorRadialGradientTransformerTemplate.xaml"/>
+		<!--#endregion-->
+
+
+		<!--#region CheckBoxes-->
+			<!--Standard-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/CheckBoxes/Standard/Template/CheckBoxStandardTemplate.xaml"/>
+		<!--#endregion-->
+
+
+		<!--#region ComboBoxes-->
+			<!--Standard-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/ComboBoxes/Standard/Template/ComboBoxStandardTemplate.xaml"/>
+		<!--#endregion-->
+
+
+		<!--#region Expanders-->
+			<!--Standard-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Expanders/Standard/Template/ExpanderStandardTemplate.xaml"/>
+		<!--#endregion-->
+
+
+		<!--#region Labels-->
+			<!--ConnectorCorrespond-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Labels/ConnectorCorrespond/Template/LabelConnectorCorrespondTemplate.xaml"/>
+		<!--#endregion-->
+
+
+		<!--#region TextBoxes-->
+			<!--Standard-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/TextBoxes/Standard/Template/TextBoxStandardTemplate.xaml"/>
+		<!--#endregion-->
+
+
+		<!--#region Windows-->
+			<!--Standard-->
+			<ResourceDictionary
+				Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Windows/Standard/Template/WindowStandardTemplate.xaml"/>
+		<!--#endregion-->
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

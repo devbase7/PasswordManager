@@ -1,0 +1,269 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:vRootNodes="clr-namespace:PasswordManager.V.Vs.RootNodes"
+	xmlns:textBoxStandard="clr-namespace:WPFMaterial.Custom.Controls.TextBoxes.Standard.Code;assembly=WPFMaterial"
+	xmlns:buttonTwoColorRadialGradient="clr-namespace:WPFMaterial.Custom.Controls.Buttons.TwoColorRadialGradient.Code;assembly=WPFMaterial"
+	xmlns:labelConnectorCorrespond="clr-namespace:WPFMaterial.Custom.Controls.Labels.ConnectorCorrespond.Code;assembly=WPFMaterial">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/PasswordManager.V;component/Resources/Colors.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/PasswordManager.V;component/Resources/VectorIcons.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Windows/Standard/Template/WindowStandardTemplate.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<!--#region WindowsStandard-->
+	<Style
+		TargetType="vRootNodes:VApplication"
+		BasedOn="{StaticResource WindowStandard-MainApplicationWindow-Template}"/>
+	<!--#endregion-->
+
+
+	<!--#region TextBlocks-->
+	<Style
+		x:Key="TextBlock-Header-Style"
+		TargetType="TextBlock">
+		<Setter
+			Property="FontFamily"
+			Value="Segoe UI Italic"/>
+
+		<Setter
+			Property="FontSize"
+			Value="14.6"/>
+
+		<Setter
+			Property="Foreground"
+			Value="SaddleBrown"/>
+
+		<Setter
+			Property="HorizontalAlignment"
+			Value="Center"/>
+
+		<Setter
+			Property="Margin"
+			Value="0,0,0,14"/>
+	</Style>
+
+
+	<Style
+		x:Key="TextBlock-RecordCollectionDataTemplate-Style"
+		TargetType="TextBlock">
+		<Setter
+			Property="FontSize"
+			Value="9"/>
+
+		<Setter
+			Property="TextTrimming"
+			Value="CharacterEllipsis"/>
+
+		<Setter
+			Property="Margin"
+			Value="4,0,0,0"/>
+	</Style>
+	<!--#endregion -->
+
+
+	<!--#region TextBoxesStandard-->
+	<!--#endregion-->
+
+
+	<!--#region PasswordBoxesStandard Extended-->
+	<Style
+		x:Key="PasswordBoxStandard-Base-Style"
+		TargetType="textBoxStandard:TextBoxStandardCode">
+		<Setter
+			Property="Icon"
+			Value="{StaticResource PathGeometry-Key}"/>
+
+		<!--Eye, Keyboard-->
+
+		<Setter
+			Property="MaxLength"
+			Value="100"/>
+	</Style>
+
+
+	<Style
+		x:Key="PasswordBoxStandard-BaseCounterHintIfTextIsEmpty-Style"
+		TargetType="textBoxStandard:TextBoxStandardCode"
+		BasedOn="{StaticResource PasswordBoxStandard-Base-Style}">
+		<Setter
+			Property="HintIfTextIsEmptyIsEnabled"
+			Value="True"/>
+	</Style>
+
+
+	<Style
+		x:Key="PasswordBoxStandard-BaseCounter-Style"
+		TargetType="textBoxStandard:TextBoxStandardCode"
+		BasedOn="{StaticResource PasswordBoxStandard-Base-Style}">
+		<Setter
+			Property="CounterIsEnabled"
+			Value="True"/>
+	</Style>
+
+
+	<Style
+		x:Key="PasswordBoxStandard-BaseCounterFixedWidth-Style"
+		TargetType="textBoxStandard:TextBoxStandardCode"
+		BasedOn="{StaticResource PasswordBoxStandard-BaseCounter-Style}">
+		<Setter
+			Property="Width"
+			Value="301"/>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region ButtonsTwoColorRadialGradient-->
+	<Style
+		x:Key="ButtonTwoColorRadialGradient-GreenButton-Style"
+		TargetType="buttonTwoColorRadialGradient:ButtonTwoColorRadialGradientCode">
+		<Setter
+			Property="BorderBrush"
+			Value="#001100"/>
+
+		<Setter
+			Property="OuterColorRadialGradientBackground"
+			Value="#001A00"/>
+
+		<Setter
+			Property="InnerColorRadialGradientBackground"
+			Value="#00F702"/>
+	</Style>
+
+
+	<Style
+		x:Key="ButtonTwoColorRadialGradient-BlueButton-Style"
+		TargetType="buttonTwoColorRadialGradient:ButtonTwoColorRadialGradientCode">
+		<Setter
+			Property="BorderBrush"
+			Value="#000011"/>
+
+		<Setter
+			Property="OuterColorRadialGradientBackground"
+			Value="#00001A"/>
+
+		<Setter
+			Property="InnerColorRadialGradientBackground"
+			Value="#00D5F7"/>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region LabelsConnectorCorrespond-->
+	<Style
+		x:Key="LabelConnectorCorrespond-Base-Style"
+		TargetType="labelConnectorCorrespond:LabelConnectorCorrespondCode">
+		<Setter
+			Property="CorrespondIcon"
+			Value="{StaticResource PathGeometry-CheckCircle}"/>
+
+		<Setter
+			Property="NotCorrespondIcon"
+			Value="{StaticResource PathGeometry-AlertCircle}"/>
+
+		<Setter
+			Property="CorrespondIconFill"
+			Value="#64D92D"/>
+
+		<Setter
+			Property="NotCorrespondIconFill"
+			Value="#FFA502"/>
+
+		<Setter
+			Property="ConnectionBrush"
+			Value="#00F702"/>
+
+		<Setter
+			Property="IsEnabledStatusHint"
+			Value="True"/>
+
+		<Setter
+			Property="Width"
+			Value="10"/>
+
+		<Setter
+			Property="Height"
+			Value="51"/>
+
+		<Setter
+			Property="Margin"
+			Value="16,0,7,8"/>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region MenuItems-->
+	<Style
+		x:Key="MenuItem-MainMenu-Style"
+		TargetType="MenuItem">
+		<Setter
+			Property="Cursor"
+			Value="Hand"/>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region Paths-->
+	<Style
+		x:Key="Path-IconRecordCollectionDataTemplate-Style"
+		TargetType="Path">
+		<Setter
+			Property="Stretch"
+			Value="Uniform"/>
+
+		<Setter
+			Property="Fill"
+			Value="#C3C3C3"/>
+
+		<Setter
+			Property="Width"
+			Value="12"/>
+
+		<Setter
+			Property="Height"
+			Value="{Binding Width, RelativeSource={RelativeSource Self}}"/>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region Grids-->
+	<Style
+		x:Key="Grid-GridCollapsedDataTemplate-Style"
+		TargetType="Grid">
+		<Style.Triggers>
+			<DataTrigger
+				Binding="{Binding Service}"
+				Value="">
+				<Setter
+					Property="Visibility"
+					Value="Collapsed"/>
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region Shapes-->
+	<Style
+		x:Key="Shape-BaseFocusVisualStyle-Style"
+		TargetType="Shape">
+		<Setter
+			Property="StrokeDashArray"
+			Value="2,1.5"/>
+
+		<Setter
+			Property="StrokeThickness"
+			Value="1"/>
+
+		<Setter
+			Property="Stroke"
+			Value="#343434"/>
+	</Style>
+	<!--#endregion-->
+</ResourceDictionary>

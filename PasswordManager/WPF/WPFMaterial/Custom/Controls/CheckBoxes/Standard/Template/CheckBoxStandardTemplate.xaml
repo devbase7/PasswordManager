@@ -1,0 +1,196 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:checkBoxStandard="clr-namespace:WPFMaterial.Custom.Controls.CheckBoxes.Standard.Code">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/CheckBoxes/Standard/Resources/Colors.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/CheckBoxes/Standard/Resources/VectorIcons.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Common/Resources/Styles.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Common/Resources/Templates.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<Style
+		TargetType="checkBoxStandard:CheckBoxStandardCode"
+		BasedOn="{StaticResource ButtonBase-CursorHandIsMouseOverAndIsPressed-Style}">
+		<Setter
+			Property="FocusVisualStyle"
+			Value="{StaticResource Control-RectangleFocusVisualStyleMinus2-Template}"/>
+
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="checkBoxStandard:CheckBoxStandardCode">
+					<BulletDecorator
+						Background="Transparent"
+						Margin="-1,-1,0,0">
+						<BulletDecorator.ToolTip>
+							<ToolTip
+								Style="{StaticResource ToolTip-ToolTipStandard-Template}">
+								<ToolTip.Content>
+									<TextBlock
+										Text="Quick mark"
+										Margin="0,0,-1,0">
+										<Run
+											Text="{TemplateBinding Hotkeys}"
+											Style="{StaticResource Run-MarkedText-Style}"/>
+									</TextBlock>
+								</ToolTip.Content>
+							</ToolTip>
+						</BulletDecorator.ToolTip>
+
+						<BulletDecorator.Bullet>
+							<Grid
+								Margin="2,2,0,1">
+								<Border
+									Name="boxBackgroundFocused"
+									Opacity="0"
+									CornerRadius="4"
+									Background="{StaticResource SolidColorBrush-BoxBackgroundFocused}"
+									Width="21"
+									Height="{Binding Width, RelativeSource={RelativeSource Self}}"/>
+
+								<Border
+									Name="box"
+									BorderBrush="{StaticResource SolidColorBrush-BoxBorder}"
+									CornerRadius="2"
+									BorderThickness="2"
+									Background="{StaticResource SolidColorBrush-BoxBackground}"
+									Width="15"
+									Height="{Binding Width, RelativeSource={RelativeSource Self}}">
+									<Path
+										Name="marker"
+										Stretch="Uniform"
+										StrokeThickness="3"
+										Stroke="{StaticResource SolidColorBrush-Marker}"
+										Data="{StaticResource PathGeometry-CheckMarker}"/>
+								</Border>
+							</Grid>
+						</BulletDecorator.Bullet>
+
+						<ContentPresenter
+							RecognizesAccessKey="True"
+							Margin="5,5,0,0"/>
+
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								Name="CommonStates">
+								<VisualState
+									Name="Normal">
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetName="box"
+											Storyboard.TargetProperty="BorderBrush.Color"
+											To="{StaticResource Color-BoxBorder-Normal}"
+											Duration="0:0:0.08"/>
+
+										<ColorAnimation
+											Storyboard.TargetName="box"
+											Storyboard.TargetProperty="Background.Color"
+											To="{StaticResource Color-BoxBackground-Normal}"
+											Duration="0:0:0.08"/>
+									</Storyboard>
+								</VisualState>
+
+								<VisualState
+									Name="MouseOver">
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetName="box"
+											Storyboard.TargetProperty="BorderBrush.Color"
+											To="{StaticResource Color-BoxBorder-MouseOver}"
+											Duration="0:0:0.1"/>
+
+										<ColorAnimation
+											Storyboard.TargetName="box"
+											Storyboard.TargetProperty="Background.Color"
+											To="{StaticResource Color-BoxBackground-MouseOver}"
+											Duration="0:0:0.1"/>
+									</Storyboard>
+								</VisualState>
+
+								<VisualState
+									Name="Pressed">
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetName="box"
+											Storyboard.TargetProperty="BorderBrush.Color"
+											To="{StaticResource Color-BoxBorder-Pressed}"
+											Duration="0"/>
+
+										<ColorAnimation
+											Storyboard.TargetName="box"
+											Storyboard.TargetProperty="Background.Color"
+											To="{StaticResource Color-BoxBackground-Pressed}"
+											Duration="0"/>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+
+							<VisualStateGroup
+								Name="FocusStates">
+								<VisualState
+									Name="Focused">
+									<Storyboard>
+										<DoubleAnimation
+											Storyboard.TargetName="boxBackgroundFocused"
+											Storyboard.TargetProperty="Opacity"
+											To="1"
+											Duration="0:0:0.1"/>
+									</Storyboard>
+								</VisualState>
+
+								<VisualState
+									Name="Unfocused">
+									<Storyboard>
+										<DoubleAnimation
+											Storyboard.TargetName="boxBackgroundFocused"
+											Storyboard.TargetProperty="Opacity"
+											To="0"
+											Duration="0:0:0.08"/>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+					</BulletDecorator>
+
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsChecked"
+							Value="False">
+							<Setter
+								TargetName="marker"
+								Property="Visibility"
+								Value="Collapsed"/>
+						</Trigger>
+
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="box"
+								Property="BorderBrush"
+								Value="{StaticResource SolidColorBrush-BoxBorderDisabled}"/>
+
+							<Setter
+								TargetName="marker"
+								Property="Stroke"
+								Value="{StaticResource SolidColorBrush-MarkerDisabled}"/>
+
+							<Setter
+								Property="Foreground"
+								Value="{StaticResource SolidColorBrush-ForegroundDisabled}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

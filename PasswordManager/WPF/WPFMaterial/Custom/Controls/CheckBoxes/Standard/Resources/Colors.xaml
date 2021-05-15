@@ -1,0 +1,76 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--#region Colors-->
+	<Color
+		x:Key="Color-BoxBorder-Normal">
+		Gray
+	</Color>
+
+
+	<Color
+		x:Key="Color-BoxBackground-Normal">
+		Transparent
+	</Color>
+
+
+	<Color
+		x:Key="Color-BoxBorder-MouseOver">
+		#5593FF
+	</Color>
+
+
+	<Color
+		x:Key="Color-BoxBackground-MouseOver">
+		#0A0000FF
+	</Color>
+
+
+	<Color
+		x:Key="Color-BoxBorder-Pressed">
+		#3C77DD
+	</Color>
+
+
+	<Color
+		x:Key="Color-BoxBackground-Pressed">
+		#140000FF
+	</Color>
+	<!--#endregion-->
+
+
+	<!--#region SolidColorBrushes-->
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BoxBorder"
+		Color="Gray"/>
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BoxBorderDisabled"
+		Color="Gainsboro"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BoxBackground"
+		Color="Transparent"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BoxBackgroundFocused"
+		Color="#EAEAEA"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-Marker"
+		Color="Black"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-MarkerDisabled"
+		Color="Gainsboro"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-ForegroundDisabled"
+		Color="Gainsboro"/>
+	<!--#endregion-->
+</ResourceDictionary>

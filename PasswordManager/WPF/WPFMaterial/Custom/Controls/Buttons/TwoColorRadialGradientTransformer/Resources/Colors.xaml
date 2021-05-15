@@ -1,0 +1,39 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--#region Colors-->
+	<Color
+		x:Key="Color-BackgroundOuter-Pressed">
+		#1A0000
+	</Color>
+
+
+	<Color
+		x:Key="Color-BackgroundInner-Pressed">
+		Red
+	</Color>
+
+
+	<Color
+		x:Key="Color-BackgroundOuterAndInner-Disabled">
+		#CBCBCB
+	</Color>
+	<!--#endregion-->
+
+
+	<!--#region SolidColorBrushes-->
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BorderDefaultedAndFocused"
+		Color="#DE8A3F"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BorderPressed"
+		Color="Red"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-BorderAndForegroundDisabled"
+		Color="Gray"/>
+	<!--#endregion-->
+</ResourceDictionary>

@@ -1,0 +1,237 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+	xmlns:auxiliary="clr-namespace:WPFMaterial.Custom.Controls.Windows.Standard.Auxiliary"
+	xmlns:windowStandard="clr-namespace:WPFMaterial.Custom.Controls.Windows.Standard.Code"
+	xmlns:buttonChromeNavigation="clr-namespace:WPFMaterial.Custom.Controls.Buttons.ChromeNavigation.Code"
+	xmlns:buttonChromeWindowManagement="clr-namespace:WPFMaterial.Custom.Controls.Buttons.ChromeWindowManagement.Code">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Windows/Standard/Resources/Colors.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Windows/Standard/Resources/VectorIcons.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Windows/Standard/Resources/Values.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Windows/Standard/Resources/Styles.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<Style
+		x:Key="WindowStandard-MainApplicationWindow-Template"
+		TargetType="windowStandard:WindowStandardCode">
+		<Style.Resources>
+			<auxiliary:ConverterMultiChromeHeight
+				x:Key="ConverterMulti-ChromeHeight"/>
+		</Style.Resources>
+
+
+		<Setter
+			Property="UseLayoutRounding"
+			Value="True"/>
+
+		<Setter
+			Property="BorderThickness"
+			Value="1"/>
+
+		<Setter
+			Property="BorderBrush"
+			Value="{StaticResource SolidColorBrush-Border}"/>
+
+		<Setter
+			Property="WindowChrome.WindowChrome">
+			<Setter.Value>
+				<WindowChrome
+					GlassFrameThickness="0"
+					CornerRadius="2"
+					ResizeBorderThickness="2"
+					CaptionHeight="29"/>
+			</Setter.Value>
+		</Setter>
+
+		<Setter
+			Property="Background"
+			Value="{StaticResource SolidColorBrush-Background}"/>
+
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Stretch"/>
+
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Stretch"/>
+
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="windowStandard:WindowStandardCode">
+					<Grid
+						Name="PART_Grid_RootContainer">
+						<Border
+							Name="body"
+							CornerRadius="{Binding (shell:WindowChrome.WindowChrome).CornerRadius, RelativeSource={RelativeSource TemplatedParent}}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							Background="{TemplateBinding Background}">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition
+										Height="Auto"/>
+
+									<RowDefinition/>
+								</Grid.RowDefinitions>
+
+								<Border
+									Grid.Row="0"
+									Name="PART_Border_Chrome"
+									BorderThickness="0,0,0,1"
+									BorderBrush="{StaticResource SolidColorBrush-ChromeBorder}"
+									Background="{StaticResource SolidColorBrush-ChromeBackground}">
+									<Border.Height>
+										<MultiBinding
+											Converter="{StaticResource ConverterMulti-ChromeHeight}">
+											<Binding
+												Path="BorderThickness.Top"
+												RelativeSource="{RelativeSource TemplatedParent}"/>
+
+											<Binding
+												Path="(shell:WindowChrome.WindowChrome).CaptionHeight"
+												RelativeSource="{RelativeSource TemplatedParent}"/>
+
+											<Binding
+												Path="(shell:WindowChrome.WindowChrome).ResizeBorderThickness.Top"
+												RelativeSource="{RelativeSource TemplatedParent}"/>
+
+											<Binding
+												Path="BorderThickness.Bottom"
+												RelativeSource="{RelativeSource Self}"/>
+										</MultiBinding>
+									</Border.Height>
+
+									<StackPanel
+										Orientation="Horizontal"
+										HorizontalAlignment="Center"
+										Margin="0,0,26,0">
+										<Image
+											Name="PART_Image_Icon"
+											WindowChrome.IsHitTestVisibleInChrome="True"
+											Source="{TemplateBinding Icon}"
+											Margin="0,4,6,4"/>
+
+										<TextBlock
+											Name="title"
+											Text="{TemplateBinding Title}"
+											Foreground="{StaticResource SolidColorBrush-Title}"
+											FontFamily="Segoe UI Semibold"
+											FontSize="16"
+											TextTrimming="CharacterEllipsis"
+											VerticalAlignment="Center"
+											Margin="0,0,0,1"/>
+									</StackPanel>
+								</Border>
+
+								<AdornerDecorator
+									Grid.Row="1">
+									<ContentPresenter
+										ContentTemplate="{TemplateBinding ContentTemplate}"
+										ContentStringFormat="{TemplateBinding ContentStringFormat}"
+										RecognizesAccessKey="True"
+										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+										Margin="{TemplateBinding Padding}"/>
+								</AdornerDecorator>
+							</Grid>
+						</Border>
+
+						<Border
+							CornerRadius="2,0,4,0"
+							BorderBrush="{StaticResource SolidColorBrush-ChromeNavigationPanelBorder}"
+							BorderThickness="0,0,1,1"
+							Background="{StaticResource SolidColorBrush-ChromeNavigationPanelBackground}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Margin="1,1,0,0">
+							<StackPanel
+								Orientation="Horizontal"
+								Margin="-1,-1,0,0">
+								<buttonChromeNavigation:ButtonChromeNavigationCode
+									CornerRadius="2,0,4,0"
+									BorderThickness="1,1,0,0"
+									Icon="{StaticResource PathGeometry-ArrowLeft}"
+									Width="39"
+									Height="23"
+									Padding="12,0"
+									IsCancel="True"
+									Command="{TemplateBinding CommandBack}"/>
+							</StackPanel>
+						</Border>
+
+						<StackPanel
+							Orientation="Horizontal"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top">
+							<buttonChromeWindowManagement:ButtonChromeWindowManagementCode
+								x:Name="PART_Button_Minimize"
+								Icon="{StaticResource PathGeometry-WindowMinimize}"
+								ToolTipText="Minimize"
+								Style="{StaticResource ButtonChromeWindowManagement-ButtonsMinimizeAndMaximizeNormalize-Style}"/>
+
+							<buttonChromeWindowManagement:ButtonChromeWindowManagementCode
+								x:Name="PART_Button_MaximizeNormalize"
+								Icon="{StaticResource PathGeometry-WindowMaximize}"
+								ToolTipText="Maximize"
+								Style="{StaticResource ButtonChromeWindowManagement-ButtonsMinimizeAndMaximizeNormalize-Style}"/>
+
+							<buttonChromeWindowManagement:ButtonChromeWindowManagementCode
+								x:Name="PART_Button_Close"
+								CornerRadius="0,2,0,0"
+								BorderThickness="0,1,1,0"
+								Icon="{StaticResource PathGeometry-WindowClose}"
+								BackgroundVisualStateMouseOver="{StaticResource SolidColorBrush-ButtonChromeWindowManagementMouseOverBackground}"
+								BackgroundVisualStatePressed="{StaticResource SolidColorBrush-ButtonChromeWindowManagementPressedBackground}"
+								ToolTipText="Close"
+								ToolTipHotkeys="(Alt+F4)"
+								Width="47"
+								Style="{StaticResource ButtonChromeWindowManagement-Base-Style}"/>
+						</StackPanel>
+					</Grid>
+
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsActive"
+							Value="True">
+							<Setter
+								TargetName="body"
+								Property="BorderBrush"
+								Value="{StaticResource SolidColorBrush-ActiveBorder}"/>
+
+							<Setter
+								TargetName="title"
+								Property="Foreground"
+								Value="{StaticResource SolidColorBrush-ActiveTitle}"/>
+						</Trigger>
+
+						<Trigger
+							Property="WindowState"
+							Value="Maximized">
+							<Setter
+								TargetName="PART_Button_MaximizeNormalize"
+								Property="Icon"
+								Value="{StaticResource PathGeometry-WindowNormalize}"/>
+
+							<Setter
+								TargetName="PART_Button_MaximizeNormalize"
+								Property="ToolTipText"
+								Value="Normalize"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

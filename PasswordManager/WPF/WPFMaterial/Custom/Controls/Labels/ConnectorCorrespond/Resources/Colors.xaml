@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--#region SolidColorBrushes-->
+	<SolidColorBrush
+		x:Key="SolidColorBrush-ConnectionBorder"
+		Color="#00F702"/>
+
+
+	<SolidColorBrush
+		x:Key="SolidColorBrush-UnderIconBackground"
+		Color="White"/>
+	<!--#endregion-->
+</ResourceDictionary>

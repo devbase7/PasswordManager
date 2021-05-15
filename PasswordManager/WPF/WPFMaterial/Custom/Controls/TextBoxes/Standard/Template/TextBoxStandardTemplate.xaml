@@ -1,0 +1,147 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	xmlns:textBoxStandard="clr-namespace:WPFMaterial.Custom.Controls.TextBoxes.Standard.Code">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/TextBoxes/Standard/Resources/Colors.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/TextBoxes/Standard/Resources/Styles.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/TextBoxes/Standard/Resources/Templates.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<Style
+		TargetType="textBoxStandard:TextBoxStandardCode">
+		<Setter
+			Property="FontFamily"
+			Value="Segoe UI"/>
+
+		<Setter
+			Property="FontSize"
+			Value="12"/>
+
+		<Setter
+			Property="CaretBrush"
+			Value="{StaticResource SolidColorBrush-Caret}"/>
+
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="textBoxStandard:TextBoxStandardCode">
+					<Grid
+						Margin="{TemplateBinding Padding}">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="Auto"/>
+
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+
+						<Path
+							Grid.Column="0"
+							Name="icon"
+							Stretch="Uniform"
+							Fill="{StaticResource SolidColorBrush-Icon}"
+							Width="16"
+							Height="{Binding Width, RelativeSource={RelativeSource Self}}"
+							VerticalAlignment="Top"
+							Data="{TemplateBinding Icon}"
+							Margin="0,13,8,0"/>
+
+						<Label
+							Grid.Column="1"
+							Content="{TemplateBinding HintIfTextIsEmpty}"
+							Visibility="{TemplateBinding HintIfTextIsEmptyVisibility}"
+							Background="{StaticResource SolidColorBrush-HintIfTextIsEmptyBackground}"
+							Foreground="{StaticResource SolidColorBrush-HintIfTextIsEmptyForeground}"
+							FontSize="8"
+							FontFamily="Segoe UI"
+							Padding="4,0,4,1"
+							Template="{StaticResource Label-HintIfTextIsEmpty-Template}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Bottom"
+							Margin="0,0,25,0"/>
+
+						<TextBlock
+							Grid.Column="1"
+							Text="{TemplateBinding Counter}"
+							Foreground="{TemplateBinding CounterBrush}"
+							FontSize="7"
+							FontFamily="Segoe UI SemiBold"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Bottom"
+							Margin="0,0,28,2"/>
+
+						<TextBox
+							Grid.Column="1"
+							Name="PART_TextBox_InputOutput"
+							Text="{Binding Text, RelativeSource={RelativeSource AncestorType=textBoxStandard:TextBoxStandardCode}, UpdateSourceTrigger=PropertyChanged}"
+							TextAlignment="{TemplateBinding TextAlignment}"
+							TextWrapping="{TemplateBinding TextWrapping}"
+							FontFamily="{TemplateBinding FontFamily}"
+							FontSize="{TemplateBinding FontSize}"
+							materialDesign:HintAssist.Hint="{TemplateBinding HintFloating}"
+							materialDesign:HintAssist.Foreground="{Binding (materialDesign:TextFieldAssist.UnderlineBrush), RelativeSource={RelativeSource Self}}"
+							materialDesign:HintAssist.HintOpacity="0.3"
+							MaxLength="{TemplateBinding MaxLength}"
+							MaxLines="{TemplateBinding MaxLines}"
+							Padding="2,0"
+							CaretBrush="{TemplateBinding CaretBrush}"
+							materialDesign:TextFieldAssist.UnderlineBrush="{StaticResource SolidColorBrush-TextBoxUnderline}"
+							Cursor="IBeam"
+							TabIndex="{TemplateBinding TabIndex}"
+							Style="{StaticResource TextBox-TextBoxWithFloatingHint-Style}"
+							Margin="0,-10,25,11"/>
+
+						<Button
+							Grid.Column="1"
+							Name="PART_Button_Clear"
+							Background="{StaticResource SolidColorBrush-ButtonClear}"
+							Width="14"
+							Height="{Binding Width, RelativeSource={RelativeSource Self}}"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Focusable="False"
+							Style="{StaticResource Button-TextBoxClear-Template}"
+							Margin="0,14,0,0"/>
+					</Grid>
+
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="icon"
+								Property="Fill"
+								Value="{StaticResource SolidColorBrush-IconDisabled}"/>
+						</Trigger>
+
+						<Trigger
+							Property="Icon"
+							Value="{x:Null}">
+							<Setter
+								TargetName="icon"
+								Property="Visibility"
+								Value="Collapsed"/>
+						</Trigger>
+
+						<Trigger
+							Property="Text"
+							Value="">
+							<Setter
+								TargetName="PART_Button_Clear"
+								Property="Visibility"
+								Value="Collapsed"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:windowStandard="clr-namespace:WPFMaterial.Custom.Controls.Windows.Standard.Code;assembly=WPFMaterial">
+	<InputBindingCollection
+		x:Key="Hotkeys-NavigationChromeApplicationWindow">
+		<KeyBinding
+			Gesture="Alt+Left"
+			Command="{Binding CommandBack, RelativeSource={RelativeSource FindAncestor, AncestorType=windowStandard:WindowStandardCode}}"/>
+	</InputBindingCollection>
+</ResourceDictionary>

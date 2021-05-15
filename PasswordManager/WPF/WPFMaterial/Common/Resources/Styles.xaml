@@ -1,0 +1,120 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Common/Resources/Values.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<!--#region ButtonBases-->
+	<Style
+		x:Key="ButtonBase-CursorHandIsMouseOverAndIsPressed-Style"
+		TargetType="ButtonBase">
+		<Style.Triggers>
+			<MultiTrigger>
+				<MultiTrigger.Conditions>
+					<Condition
+						Property="IsMouseOver"
+						Value="True"/>
+
+					<Condition
+						Property="IsMouseCaptured"
+						Value="False"/>
+				</MultiTrigger.Conditions>
+
+				<Setter
+					Property="Cursor"
+					Value="{StaticResource Static-CursorHand}"/>
+			</MultiTrigger>
+
+			<Trigger
+				Property="IsPressed"
+				Value="True">
+				<Setter
+					Property="Cursor"
+					Value="{StaticResource Static-CursorHand}"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region Shapes-->
+	<Style
+		x:Key="Shape-BaseFocusVisualStyle-Style"
+		TargetType="Shape">
+		<Setter
+			Property="StrokeDashArray"
+			Value="2,1.5"/>
+
+		<Setter
+			Property="StrokeThickness"
+			Value="1"/>
+
+		<Setter
+			Property="Stroke"
+			Value="#343434"/>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region Rectangles-->
+	<Style
+		x:Key="Rectangle-BaseRectangleFocusVisualStyle-Style"
+		TargetType="Rectangle"
+		BasedOn="{StaticResource Shape-BaseFocusVisualStyle-Style}">
+		<Setter
+			Property="RadiusX"
+			Value="3"/>
+
+		<Setter
+			Property="RadiusY"
+			Value="{Binding RadiusX, RelativeSource={RelativeSource Self}}"/>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region FrameworkElements-->
+	<Style
+		x:Key="FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheLeftSide-Style"
+		TargetType="FrameworkElement">
+		<Setter
+			Property="Margin"
+			Value="-1,0,0,0"/>
+	</Style>
+
+
+	<Style
+		x:Key="FrameworkElement-HorizontalVisualPositionAdjustmentIfTheMarkedTextIsOnTheRightSide-Style"
+		TargetType="FrameworkElement">
+		<Setter
+			Property="Margin"
+			Value="0,0,-1,0"/>
+	</Style>
+
+
+	<Style
+		x:Key="FrameworkElement-HorizontalVisualPositionAdjustmentIfMarkedTextIsOnBothSides-Style"
+		TargetType="FrameworkElement">
+		<Setter
+			Property="Margin"
+			Value="-1,0"/>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region Runs-->
+	<Style
+		x:Key="Run-MarkedText-Style"
+		TargetType="Run">
+		<Setter
+			Property="FontFamily"
+			Value="Segoe UI Bold"/>
+
+		<Setter
+			Property="Foreground"
+			Value="Red"/>
+	</Style>
+	<!--#endregion-->
+</ResourceDictionary>

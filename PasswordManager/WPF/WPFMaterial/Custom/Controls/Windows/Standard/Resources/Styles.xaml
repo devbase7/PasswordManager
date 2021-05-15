@@ -1,0 +1,44 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:buttonChromeWindowManagement="clr-namespace:WPFMaterial.Custom.Controls.Buttons.ChromeWindowManagement.Code">
+	<!--#region ButtonsChromeWindowManagement-->
+	<Style
+		x:Key="ButtonChromeWindowManagement-Base-Style"
+		TargetType="buttonChromeWindowManagement:ButtonChromeWindowManagementCode">
+		<Setter
+			Property="Background"
+			Value="{Binding Background, ElementName=PART_Border_Chrome}"/>
+
+		<Setter
+			Property="Height"
+			Value="25"/>
+
+		<Setter
+			Property="Padding"
+			Value="18,0"/>
+	</Style>
+
+
+	<Style
+		x:Key="ButtonChromeWindowManagement-ButtonsMinimizeAndMaximizeNormalize-Style"
+		TargetType="buttonChromeWindowManagement:ButtonChromeWindowManagementCode"
+		BasedOn="{StaticResource ButtonChromeWindowManagement-Base-Style}">
+		<Setter
+			Property="BorderThickness"
+			Value="0,1,0,0"/>
+
+		<Setter
+			Property="BackgroundVisualStateMouseOver"
+			Value="#747070"/>
+
+		<Setter
+			Property="BackgroundVisualStatePressed"
+			Value="#9C9999"/>
+
+		<Setter
+			Property="Width"
+			Value="46"/>
+	</Style>
+	<!--#endregion-->
+</ResourceDictionary>

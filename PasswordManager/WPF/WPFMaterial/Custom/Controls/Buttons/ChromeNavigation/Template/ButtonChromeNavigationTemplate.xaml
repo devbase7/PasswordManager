@@ -1,0 +1,177 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:buttonChromeNavigation="clr-namespace:WPFMaterial.Custom.Controls.Buttons.ChromeNavigation.Code">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Custom/Controls/Buttons/ChromeNavigation/Resources/Colors.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Common/Resources/Styles.xaml"/>
+
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Common/Resources/Templates.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<Style
+		TargetType="buttonChromeNavigation:ButtonChromeNavigationCode"
+		BasedOn="{StaticResource ButtonBase-CursorHandIsMouseOverAndIsPressed-Style}">
+		<Setter
+			Property="WindowChrome.IsHitTestVisibleInChrome"
+			Value="True"/>
+
+		<Setter
+			Property="BorderBrush"
+			Value="{StaticResource SolidColorBrush-Border}"/>
+
+		<Setter
+			Property="BorderThickness"
+			Value="1"/>
+
+		<Setter
+			Property="Background"
+			Value="{StaticResource SolidColorBrush-Background}"/>
+
+		<Setter
+			Property="Padding"
+			Value="16,0"/>
+
+		<Setter
+			Property="Focusable"
+			Value="False"/>
+
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="buttonChromeNavigation:ButtonChromeNavigationCode">
+					<Border
+						Name="body"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						Background="{TemplateBinding Background}"
+						Width="{TemplateBinding Width}"
+						Height="{TemplateBinding Height}"
+						Padding="{TemplateBinding Padding}">
+						<Border.ToolTip>
+							<ToolTip
+								Style="{StaticResource ToolTip-ToolTipStandard-Template}">
+								<ToolTip.Content>
+									<TextBlock
+										Text="Back "
+										Margin="0,0,-1,0">
+										<Run
+											Text="{TemplateBinding Hotkeys}"
+											Style="{StaticResource Run-MarkedText-Style}"/>
+									</TextBlock>
+								</ToolTip.Content>
+							</ToolTip>
+						</Border.ToolTip>
+
+						<Path
+							Name="icon"
+							Stretch="Uniform"
+							Data="{TemplateBinding Icon}"
+							Fill="{StaticResource SolidColorBrush-Icon}"/>
+
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup>
+								<VisualState
+									Name="Normal">
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetProperty="Background.Color"
+											To="{StaticResource Color-Background-Normal}"
+											Duration="0:0:0.08"/>
+
+										<ColorAnimation
+											Storyboard.TargetName="icon"
+											Storyboard.TargetProperty="Fill.Color"
+											To="{StaticResource Color-Icon-Normal}"
+											Duration="0:0:0.08"/>
+									</Storyboard>
+								</VisualState>
+
+								<VisualState
+									Name="MouseOver">
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetProperty="Background.Color"
+											To="{StaticResource Color-Background-MouseOver}"
+											Duration="0:0:0.1"/>
+
+										<ColorAnimation
+											Storyboard.TargetName="icon"
+											Storyboard.TargetProperty="Fill.Color"
+											To="{StaticResource Color-Icon-MouseOver}"
+											Duration="0:0:0.1"/>
+									</Storyboard>
+								</VisualState>
+
+								<VisualState
+									Name="Pressed">
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetProperty="Background.Color"
+											To="{StaticResource Color-Background-Pressed}"
+											Duration="0"/>
+
+										<ColorAnimation
+											Storyboard.TargetName="icon"
+											Storyboard.TargetProperty="Fill.Color"
+											To="{StaticResource Color-Icon-Pressed}"
+											Duration="0"/>
+									</Storyboard>
+								</VisualState>
+
+								<VisualState
+									Name="Disabled">
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetName="icon"
+											Storyboard.TargetProperty="Fill.Color"
+											To="Gainsboro"
+											Duration="0"/>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+					</Border>
+
+					<ControlTemplate.Triggers>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition
+									Property="IsDefaulted"
+									Value="False"/>
+
+								<Condition
+									Property="IsMouseOver"
+									Value="True"/>
+
+								<Condition
+									Property="IsFocused"
+									Value="False"/>
+							</MultiTrigger.Conditions>
+
+							<Setter
+								TargetName="body"
+								Property="BorderBrush"
+								Value="{StaticResource SolidColorBrush-BorderMouseOver}"/>
+						</MultiTrigger>
+
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="body"
+								Property="BorderBrush"
+								Value="{StaticResource SolidColorBrush-BorderPressed}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

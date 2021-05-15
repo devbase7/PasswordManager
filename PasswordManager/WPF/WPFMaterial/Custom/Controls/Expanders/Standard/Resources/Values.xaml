@@ -1,0 +1,25 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--#region RotateTransforms-->
+	<RotateTransform
+		x:Key="RotateTransform-Plus90"
+		CenterX="8"
+		CenterY="{Binding CenterX, RelativeSource={RelativeSource Self}}"
+		Angle="90"/>
+
+
+	<RotateTransform
+		x:Key="RotateTransform-Minus90"
+		CenterX="8"
+		CenterY="{Binding CenterX, RelativeSource={RelativeSource Self}}"
+		Angle="-90"/>
+
+
+	<RotateTransform
+		x:Key="RotateTransform-Plus180"
+		CenterX="8"
+		CenterY="{Binding CenterX, RelativeSource={RelativeSource Self}}"
+		Angle="180"/>
+	<!--#endregion-->
+</ResourceDictionary>

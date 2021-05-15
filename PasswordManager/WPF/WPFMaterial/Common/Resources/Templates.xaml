@@ -1,0 +1,165 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/WPFMaterial;component/Common/Resources/Styles.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<!--#region Controls-->
+	<Style
+		x:Key="Control-RectangleFocusVisualStyleMinus4-Template"
+		TargetType="Control">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Rectangle
+						Style="{StaticResource Rectangle-BaseRectangleFocusVisualStyle-Style}"
+						Margin="-4"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+
+	<Style
+		x:Key="Control-RectangleFocusVisualStyleMinus3-Template"
+		TargetType="Control">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Rectangle
+						Style="{StaticResource Rectangle-BaseRectangleFocusVisualStyle-Style}"
+						Margin="-3"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+
+	<Style
+		x:Key="Control-RectangleFocusVisualStyleMinus2-Template"
+		TargetType="Control">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Rectangle
+						Style="{StaticResource Rectangle-BaseRectangleFocusVisualStyle-Style}"
+						Margin="-2"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+
+	<Style
+		x:Key="Control-RectangleFocusVisualStylePlus2-Template"
+		TargetType="Control">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Rectangle
+						Style="{StaticResource Rectangle-BaseRectangleFocusVisualStyle-Style}"
+						Margin="2"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+
+	<Style
+		x:Key="Control-RectangleFocusVisualStylePlus3-Template"
+		TargetType="Control">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Rectangle
+						Style="{StaticResource Rectangle-BaseRectangleFocusVisualStyle-Style}"
+						Margin="3"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!--#endregion-->
+
+
+	<!--#region ToolTips-->
+	<Style
+		x:Key="ToolTip-ToolTipStandard-Template"
+		TargetType="ToolTip">
+		<Setter
+			Property="HorizontalOffset"
+			Value="-34"/>
+
+		<Setter
+			Property="VerticalOffset"
+			Value="4"/>
+
+		<Setter
+			Property="Foreground"
+			Value="White"/>
+
+		<Setter
+			Property="Padding"
+			Value="10,8"/>
+
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="ToolTip">
+					<Border
+						BorderBrush="#B0B0B0"
+						CornerRadius="5"
+						BorderThickness="1"
+						Background="#99000000"
+						Padding="{TemplateBinding Padding}"
+						Margin="6">
+						<Border.Effect>
+							<DropShadowEffect
+								ShadowDepth="0"
+								BlurRadius="6"
+								RenderingBias="Quality"
+								Color="Gray"/>
+						</Border.Effect>
+
+						<ContentPresenter/>
+					</Border>
+
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsOpen"
+							Value="False">
+							<Setter
+								Property="Visibility"
+								Value="Collapsed"/>
+						</Trigger>
+
+						<Trigger
+							Property="Content"
+							Value="{x:Null}">
+							<Setter
+								Property="Visibility"
+								Value="Collapsed"/>
+						</Trigger>
+
+						<Trigger
+							Property="Content"
+							Value="">
+							<Setter
+								Property="Visibility"
+								Value="Collapsed"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!--#endregion-->
+</ResourceDictionary>

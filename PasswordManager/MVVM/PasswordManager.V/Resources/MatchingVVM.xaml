@@ -1,0 +1,54 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:vmContentsLevel1Nodes="clr-namespace:PasswordManager.VM.VMs.Contents.Level1.Nodes;assembly=PasswordManager.VM"
+	xmlns:vmContentsLevel1Standard="clr-namespace:PasswordManager.VM.VMs.Contents.Level1.Standards;assembly=PasswordManager.VM"
+	xmlns:vmContentsLevel2Standard="clr-namespace:PasswordManager.VM.VMs.Contents.Level2.Standards;assembly=PasswordManager.VM"
+	xmlns:vContentsLevel1Nodes="clr-namespace:PasswordManager.V.Vs.Contents.Level1.Nodes"
+	xmlns:vContentsLevel1Standard="clr-namespace:PasswordManager.V.Vs.Contents.Level1.Standards"
+	xmlns:vContentsLevel2Standard="clr-namespace:PasswordManager.V.Vs.Contents.Level2.Standards">
+	<!--#region Matching V and VM contents level 1-->
+	<!--#region Nodes-->
+	<DataTemplate
+		DataType="{x:Type vmContentsLevel1Nodes:VMChangingLoginPassword}">
+		<vContentsLevel1Nodes:VChangingLoginPassword/>
+	</DataTemplate>
+	<!--#endregion-->
+
+
+	<!--#region Standard-->
+	<DataTemplate
+		DataType="{x:Type vmContentsLevel1Standard:VMAuthorization}">
+		<vContentsLevel1Standard:VAuthorization/>
+	</DataTemplate>
+
+
+	<DataTemplate
+		DataType="{x:Type vmContentsLevel1Standard:VMRegistration}">
+		<vContentsLevel1Standard:VRegistration/>
+	</DataTemplate>
+
+
+	<DataTemplate
+		DataType="{x:Type vmContentsLevel1Standard:VMMain}">
+		<vContentsLevel1Standard:VMain/>
+	</DataTemplate>
+	<!--#endregion-->
+	<!--#endregion-->
+
+
+	<!--#region Matching V and VM contents level 2-->
+	<!--#region Standard-->
+	<DataTemplate
+		DataType="{x:Type vmContentsLevel2Standard:VMLoginPassword}">
+		<vContentsLevel2Standard:VLoginPassword/>
+	</DataTemplate>
+
+
+	<DataTemplate
+		DataType="{x:Type vmContentsLevel2Standard:VMChangeLoginPassword}">
+		<vContentsLevel2Standard:VChangeLoginPassword/>
+	</DataTemplate>
+	<!--#endregion-->
+	<!--#endregion-->
+</ResourceDictionary>

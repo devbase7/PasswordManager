@@ -1,0 +1,90 @@
+﻿<UserControl
+	x:Class="PasswordManager.V.Vs.Contents.Level1.Standards.VRegistration"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:textBoxStandard="clr-namespace:WPFMaterial.Custom.Controls.TextBoxes.Standard.Code;assembly=WPFMaterial"
+	xmlns:labelConnectorCorrespond="clr-namespace:WPFMaterial.Custom.Controls.Labels.ConnectorCorrespond.Code;assembly=WPFMaterial"
+	xmlns:buttonTwoColorRadialGradient="clr-namespace:WPFMaterial.Custom.Controls.Buttons.TwoColorRadialGradient.Code;assembly=WPFMaterial"
+	mc:Ignorable="d">
+	<UserControl.Resources>
+		<ResourceDictionary
+			Source="pack://application:,,,/PasswordManager.V;component/Resources/Values.xaml"/>
+	</UserControl.Resources>
+
+
+	<StackPanel
+		HorizontalAlignment="Center"
+		VerticalAlignment="Center"
+		Margin="0,8,0,0">
+		<TextBlock
+			Text="Registering a new account"
+			Style="{StaticResource TextBlock-Header-Style}"/>
+
+		<textBoxStandard:TextBoxStandardCode
+			Text="{Binding Login}"
+			Icon="{StaticResource PathGeometry-Account}"
+			HintFloating="Login"
+			IsSetFocus="{Binding LoginIsSetFocus}"
+			Width="292"
+			HintIfTextIsEmpty="{StaticResource String-ToRegisterThisFieldMustNotBeEmpty}"
+			HintIfTextIsEmptyIsEnabled="True"
+			MaxLength="100"
+			CounterIsEnabled="True"
+			Margin="0,0,1,0"/>
+
+		<Grid
+			Margin="0,4,34,0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="Auto"/>
+
+				<ColumnDefinition
+					Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<labelConnectorCorrespond:LabelConnectorCorrespondCode
+				Grid.Column="0"
+				FirstStringValueToCorrespond="{Binding Password}"
+				SecondStringValueToCorrespond="{Binding ConfirmPassword}"
+				CorrespondStatusHint="{StaticResource FrameworkElement-RegistrationPasswordCorrespondStatusHint-TextBlock}"
+				NotCorrespondStatusHint="{StaticResource FrameworkElement-RegistrationPasswordNotCorrespondStatusHint-TextBlock}"
+				Style="{StaticResource LabelConnectorCorrespond-Base-Style}"/>
+
+			<StackPanel
+				Grid.Column="1">
+				<textBoxStandard:TextBoxStandardCode
+					Text="{Binding Password}"
+					Icon="{StaticResource PathGeometry-Key}"
+					HintFloating="Password"
+					Width="292"
+					HintIfTextIsEmpty="{StaticResource String-ToRegisterThisFieldMustNotBeEmpty}"
+					HintIfTextIsEmptyIsEnabled="True"
+					MaxLength="100"
+					CounterIsEnabled="True"/>
+
+				<textBoxStandard:TextBoxStandardCode
+					Text="{Binding ConfirmPassword}"
+					Icon="{StaticResource PathGeometry-Key}"
+					HintFloating="Confirm password"
+					Width="292"
+					IsEnabled="{Binding ConfirmPasswordIsEnabled}"
+					HintIfTextIsEmpty="{StaticResource String-ToRegisterThisFieldMustNotBeEmpty}"
+					HintIfTextIsEmptyIsEnabled="True"
+					MaxLength="100"
+					CounterIsEnabled="True"
+					Margin="0,4,0,0"/>
+			</StackPanel>
+		</Grid>
+
+		<buttonTwoColorRadialGradient:ButtonTwoColorRadialGradientCode
+			Content="_Register"
+			Icon="{StaticResource PathGeometry-AccountPlus}"
+			Width="242"
+			IsDefault="True"
+			Style="{StaticResource ButtonTwoColorRadialGradient-GreenButton-Style}"
+			Margin="0,12,0,0"
+			Command="{Binding Register}"/>
+	</StackPanel>
+</UserControl>
